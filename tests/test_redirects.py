@@ -1,3 +1,4 @@
+import allure
 from conftest import driver
 from pages.main_page import MainPage
 from locators.main_page_locators import MainPageLocators
@@ -5,7 +6,8 @@ from locators.main_page_locators import MainPageLocators
 
 class TestRedirects:
 
-    # тест проверяет, что при клике на лого "Самокат" происходит переход на главную, потому что есть картинка скутера
+    @allure.description(
+        'тест проверяет, что при клике на лого "Самокат" происходит переход на главную, потому что есть картинка скутера')
     def test_logo_scooter_redirect_main(self, driver):
         main_page = MainPage(driver)
         main_page.click_order_button()
@@ -13,7 +15,8 @@ class TestRedirects:
         element = main_page.driver.find_element(*MainPageLocators.IMG_SCOOTER)
         assert element
 
-    # тест проверяет, что после клика на лого яндекса урл содержит хост дзена
+    @allure.description(
+        'тест проверяет, что после клика на лого яндекса урл содержит хост дзена')
     def test_logo_yandex_redirect_dzen(self, driver):
         main_page = MainPage(driver)
         main_page.click_logo_yandex()

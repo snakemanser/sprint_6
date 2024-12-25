@@ -15,6 +15,7 @@ class OrderPage:
     def set_address(self, address):
         self.driver.find_element(*OrderPageLocators.ADDRESS_FIELD).send_keys(address)
 
+
     def set_metro_sokolniki(self):
         self.driver.find_element(*OrderPageLocators.METRO_FIELD).click()
         self.driver.find_element(*OrderPageLocators.METRO_SOKOLNIKI_BUTTON).click()

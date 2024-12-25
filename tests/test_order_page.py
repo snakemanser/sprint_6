@@ -1,3 +1,4 @@
+import allure
 import pytest
 from conftest import driver
 from pages.main_page import MainPage
@@ -6,8 +7,8 @@ from pages.order_page import OrderPage
 
 class TestOrderPage:
 
-    # тест проверяет сценарий оформления заказа для обеих кнопок "Заказать",
-    # от нажатия на кнопку "Заказать" до окна об успешном оформлении заказа
+    @allure.description(
+        'тест проверяет сценарий оформления заказа для обеих кнопок "Заказать", от нажатия на кнопку "Заказать" до окна об успешном оформлении заказа')
     @pytest.mark.parametrize("name, surname, address, phone", [
         ('Пиджак', 'Течкович', 'На мидочек', '88005553535'),
         ('Падж', 'Хукович', 'Тоже на мидочек', '88000000000')

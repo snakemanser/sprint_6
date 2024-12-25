@@ -1,3 +1,4 @@
+import allure
 import pytest
 from conftest import driver
 from pages.main_page import MainPage
@@ -6,7 +7,8 @@ from locators.main_page_locators import MainPageLocators
 
 class TestMainPage:
 
-    # тест проверяет текст ответов на "Вопросы о важном"
+    @allure.description(
+        'тест проверяет текст ответов на "Вопросы о важном"')
     @pytest.mark.parametrize("question, answer, text", [
         (MainPageLocators.QUESTION_0, MainPageLocators.ANSWER_0, 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.'),
         (MainPageLocators.QUESTION_1, MainPageLocators.ANSWER_1, 'Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.'),
