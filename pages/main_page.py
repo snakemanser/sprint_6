@@ -2,12 +2,10 @@ import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators.main_page_locators import MainPageLocators
+from pages.base_page import BasePage
 
 
-class MainPage:
-
-    def __init__(self, driver):
-        self.driver = driver
+class MainPage(BasePage):
 
     @allure.step('скролит страницу вниз до конца')
     def scroll_down(self):

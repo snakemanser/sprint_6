@@ -1,10 +1,8 @@
 from locators.order_page_locators import OrderPageLocators
+from pages.base_page import BasePage
 
 
-class OrderPage:
-
-    def __init__(self, driver):
-        self.driver = driver
+class OrderPage(BasePage):
 
     def set_name(self, name):
         self.driver.find_element(*OrderPageLocators.NAME_FIELD).send_keys(name)
@@ -14,7 +12,6 @@ class OrderPage:
 
     def set_address(self, address):
         self.driver.find_element(*OrderPageLocators.ADDRESS_FIELD).send_keys(address)
-
 
     def set_metro_sokolniki(self):
         self.driver.find_element(*OrderPageLocators.METRO_FIELD).click()
