@@ -12,7 +12,7 @@ class TestRedirects:
         main_page = MainPage(driver)
         main_page.click_order_button()
         main_page.click_logo_scooter()
-        element = main_page.driver.find_element(*MainPageLocators.IMG_SCOOTER)
+        element = main_page.find(MainPageLocators.IMG_SCOOTER)
         assert element
 
     @allure.description(

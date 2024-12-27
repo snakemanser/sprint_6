@@ -5,41 +5,40 @@ from pages.base_page import BasePage
 class OrderPage(BasePage):
 
     def set_name(self, name):
-        self.driver.find_element(*OrderPageLocators.NAME_FIELD).send_keys(name)
+        self.find(OrderPageLocators.NAME_FIELD).send_keys(name)
 
     def set_surname(self, surname):
-        self.driver.find_element(*OrderPageLocators.SURNAME_FIELD).send_keys(surname)
+        self.find(OrderPageLocators.SURNAME_FIELD).send_keys(surname)
 
     def set_address(self, address):
-        self.driver.find_element(*OrderPageLocators.ADDRESS_FIELD).send_keys(address)
+        self.find(OrderPageLocators.ADDRESS_FIELD).send_keys(address)
 
     def set_metro_sokolniki(self):
-        self.driver.find_element(*OrderPageLocators.METRO_FIELD).click()
-        self.driver.find_element(*OrderPageLocators.METRO_SOKOLNIKI_BUTTON).click()
+        self.click_element(OrderPageLocators.METRO_FIELD)
+        self.click_element(OrderPageLocators.METRO_SOKOLNIKI_BUTTON)
 
     def set_phone(self, phone):
-        self.driver.find_element(*OrderPageLocators.PHONE_FIELD).send_keys(phone)
+        self.find(OrderPageLocators.PHONE_FIELD).send_keys(phone)
 
     def click_next_button(self):
-        self.driver.find_element(*OrderPageLocators.NEXT_BUTTON).click()
+        self.click_element(OrderPageLocators.NEXT_BUTTON)
 
     def set_delivery_date_30122024(self):
-        self.driver.find_element(*OrderPageLocators.DELIVERY_DATE_FIELD).click()
-        self.driver.find_element(*OrderPageLocators.DATE_30122024).click()
+        self.click_element(OrderPageLocators.DELIVERY_DATE_FIELD)
+        self.click_element(OrderPageLocators.DATE_30122024)
 
     def set_rental_date_one_day(self):
-        self.driver.find_element(*OrderPageLocators.RENTAL_DATE_FIELD).click()
-        self.driver.find_element(*OrderPageLocators.RENTAL_DAY).click()
+        self.click_element(OrderPageLocators.RENTAL_DATE_FIELD)
+        self.click_element(OrderPageLocators.RENTAL_DAY)
 
     def click_order_button(self):
-        self.driver.find_element(*OrderPageLocators.ORDER_BUTTON).click()
+        self.click_element(OrderPageLocators.ORDER_BUTTON)
 
     def click_yes_button(self):
-        self.driver.find_element(*OrderPageLocators.YES_BUTTON).click()
+        self.click_element(OrderPageLocators.YES_BUTTON)
 
     def return_order_completed_text(self):
-        return self.driver.find_element(*OrderPageLocators.ORDER_COMPLETED_TEXT).text
-
+        return self.find(OrderPageLocators.ORDER_COMPLETED_TEXT).text
 
 
 
